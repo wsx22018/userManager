@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Simple User Manager System</title>
+	<link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.5.2/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="jquery-easyui-1.5.5.2/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="user/user.css">
+	<script type="text/javascript" src="jquery-easyui-1.5.5.2/locale/easyui-lang-zh_CN.js"></script>
+	<script type="text/javascript" src="jquery-easyui-1.5.5.2/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery-easyui-1.5.5.2/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="user/user.js"></script>
+</head>
+<body>
+<table id="dg" title="用户管理" class="easyui-datagrid" style="width:90%;height:460px;" 
+		toolbar="#toolbar"
+		rownumbers="true" fitColumns="true" singleSelect="true">
+</table>
+<div id="dlg" class="easyui-dialog" style="width:450px;height:350px;padding:10px 20px"
+		closed="true" buttons="#dlg-buttons">
+	<form id="fm" method="post">
+		<div style="display: none">
+			<label>ID:</label>
+			<input type = "text" name = "id" id = "id">
+		</div>
+		<div class="fitem">
+			<label>用户名称:</label>
+			<input class="easyui-textbox" name = "name" style="width:70%;height:32px" required="true">
+		</div>
+		<div class="fitem">
+			<label>用户年龄:</label>
+			<input name="age" class="easyui-numberbox" data-options="min:0" required="true" style="width:70%;height:32px">
+		</div>
+		<div class="fitem">
+			<label>用户性别:</label>
+			<select id="cc" class="easyui-combobox" name="sex" style="width:70%;" editable='false'>
+			    <option value="0">女</option>
+			    <option value="1">男</option>
+			</select>
+		</div>
+		<div class="fitem">
+			<label>E-mail:</label>
+			<input name = "email" class="easyui-textbox" data-options="prompt:'输入邮箱地址',validType:'email'" style="width:70%;height:32px">
+		</div>
+	</form>
+</div>
+<div id="dlg-buttons">
+	<a href="#" class="easyui-linkbutton" iconCls="icon-ok" onclick="saveUser()">Save</a>
+	<a href="#" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg').dialog('close')">Cancel</a>
+</div>
+</body>
+</html>
